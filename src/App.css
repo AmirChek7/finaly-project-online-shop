@@ -1,0 +1,45 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.cart td {
+  padding: 10px 50px;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+
+.product-detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.detail-left {
+  width: 40%;
+}
+
+.detail-left img {
+  width: 100%;
+}
+
+.detail-right {
+  width: 55%;
+}
+
+.detail-right ul li {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  font-size: 24px;
+}

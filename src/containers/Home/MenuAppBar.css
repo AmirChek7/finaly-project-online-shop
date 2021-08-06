@@ -1,0 +1,52 @@
+.for{
+    margin: 30px;
+    font-size: 20px;
+}
+
+.for{
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.for__link{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    position: relative;
+
+    color: #fff;
+    text-decoration: none;
+
+    transition: color .3s linear;
+}
+
+.for__link:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: goldenrod;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity .1s linear, color .2s linear;
+}
+
+.for__link:hover{
+    color: gold;
+}
+
+.for__link.active{
+    color: gold;
+}
+
+.for__link:hover:after,
+.for__link.active::after{
+    display: block;
+    opacity: 1;
+}
