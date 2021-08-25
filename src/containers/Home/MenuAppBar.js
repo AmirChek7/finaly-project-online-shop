@@ -222,14 +222,14 @@ export default function PrimarySearchAppBar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <Typography className="for" className={classes.for} variant="h6" noWrap>
-                        <Link to="/admin" className={classes.for} className="for__link">Для мужчин</Link>
+                    <Typography className={classes.for} variant="h6" noWrap>
+                        <Link to="/admin" className={classes.for} className="for__link col1">для мужчин</Link>
                     </Typography>
                     <Typography className={classes.forwoman} variant="h6" noWrap>
-                        <Link to="/"  className="for__link">Для женщин</Link>
+                        <Link to="/"  className="for__link col2">для женщин</Link>
                     </Typography>
                     <Typography className={classes.for} variant="h6" noWrap>
-                        <Link to="/" className="for__link">Для детей</Link>
+                        <Link to="/" className="for__link col3">для детей</Link>
                     </Typography>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>

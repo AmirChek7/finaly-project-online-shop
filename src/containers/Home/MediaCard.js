@@ -11,17 +11,21 @@ import { ShoppingCart } from '@material-ui/icons';
 import { clientContext } from '../../contexts/ClientContext';
 import { Link } from 'react-router-dom'
 import arrowRight from './../../icons/right-arrow.png'
-import ProductDetail from '../ProductDetail/ProductDetail';
 
 const useStyles = makeStyles({
     root: {
         maxWidth: 345,
         flexDirection: 'row',
         margin: 45,
-        shadowBox: '0 0 20px rgba(0, 0, 0, 0.10)'
+        shadowBox: '0 0 20px rgba(0, 0, 0, 0.10)',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 0,
+        borderBottomRightRadius: 30,
+        borderBottomLeftRadius: 0,
     },
     media: {
-        height: 200,
+        height: 300,
+        marginTop: 25,
         backgroundSize: 'contain'
     },
     price: {
@@ -71,7 +75,7 @@ export default function MediaCard({ product }) {
                 >
                     <ShoppingCart />
                 </IconButton>
-                <Link to={`/product-detail/${product.id}`} className={classes.more}>
+                <Link  to={`/product-detail/${product.id}`} className={classes.more}>
                     Learn More
                 </Link>
                     <img width={13} height={13} paddingLeft={20} className="img" src={arrowRight} />

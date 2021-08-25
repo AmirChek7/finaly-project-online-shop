@@ -23,11 +23,11 @@ const ProductDetail = () => {
                                 <ul>
                                     <li>
                                         <div>Цена:</div>
-                                        <div>{productDetail.price} ₽</div>
+                                        <div>{productDetail.price}₽</div>
                                     </li>
                                     <li>
                                         <div>Скидка:</div>
-                                        <div>{productDetail.discount} %</div>
+                                        <div>{productDetail.discount}%</div>
                                     </li>
                                     <li>
                                         <div>Продавец:</div>
@@ -52,7 +52,7 @@ const ProductDetail = () => {
                                 <div>
                                     <p className="description">{productDetail.description}</p>
                                 </div>
-                                <button className="buy">BUY</button>
+                                <button className="buy">продолжить</button>
                             </div>
                         </div>
                     </div>
