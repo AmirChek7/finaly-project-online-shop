@@ -14,10 +14,9 @@ import arrowRight from './../../icons/right-arrow.png'
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
         flexDirection: 'row',
         margin: 45,
-        shadowBox: '0 0 20px rgba(0, 0, 0, 0.10)',
+        shadowBox: '20px rgba(0, 0, 0, 0.10)',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 0,
         borderBottomRightRadius: 30,
@@ -37,8 +36,16 @@ const useStyles = makeStyles({
         color: '#06c;',
         cursor: 'pointer'
     },
-    img: {
-    
+    reit: {
+        border: '2px solid #green',
+        borderRadius: '40%',
+        background: 'green',
+        opacity: '0.75',
+        color: 'white',
+        paddingRight: '10px',
+        paddingLeft: '10px',
+        paddingTop: '10px',
+        paddingBottom: '10px',
     }
 }); 
 
@@ -79,7 +86,8 @@ export default function MediaCard({ product }) {
                     Learn More
                 </Link>
                     <img width={13} height={13} paddingLeft={20} className="img" src={arrowRight} />
+                    <div className={classes.reit}>10</div>
             </CardActions>
-        </Card>
+        </Card>  
     );
 }

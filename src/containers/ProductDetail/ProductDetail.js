@@ -42,7 +42,7 @@ const ProductDetail = () => {
                                         <div>{productDetail.category} </div>
                                     </li>
                                     <li>
-                                        <div>Кол-во в нал.:</div>
+                                        <div>Кол-во:</div>
                                         <div>{productDetail.countInStock}</div>
                                     </li>                                    <li>
                                         <div>Где купить: </div>

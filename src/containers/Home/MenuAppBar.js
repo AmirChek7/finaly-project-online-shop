@@ -9,24 +9,19 @@ import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Link, useHistory } from 'react-router-dom';
 import { ShoppingBasket } from '@material-ui/icons';
 import { clientContext } from '../../contexts/ClientContext';
-import './MenuAppBar.css';
+
+// Стили
 
 const useStyles = makeStyles((theme) => ({
     grow: {
         flexGrow: 1,
     },
-    for: {
-        marginRight: 40
-    },
-    forwoman: {
-        marginRight: 40
+    navBar: {
+        backgroundColor: '#333'
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -36,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
+        fontFamily: 'Comfortaa;',
+        color: '#ffffff',
+        fontWeight: '700',
+        fontStyle: 'normal',
+        fontSize: '30px',
     },
     search: {
         position: 'relative',
@@ -66,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         transition: theme.transitions.create('width'),
         width: '100%',
@@ -87,6 +86,10 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 }));
+
+// Конец стилей
+
+
 
 export default function PrimarySearchAppBar() {
     const { productsCountInCart, getProducts } = useContext(clientContext)
@@ -153,41 +156,15 @@ export default function PrimarySearchAppBar() {
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
-        <Menu
-            anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            id={mobileMenuId}
-            keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={isMobileMenuOpen}
-            onClose={handleMobileMenuClose}
-        >
+        <Menu>
             <MenuItem>
-                <IconButton aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="secondary">
-                        <MailIcon />
-                    </Badge>
-                </IconButton>
-                <p>Messages</p>
-            </MenuItem>
-            <MenuItem>
-                <IconButton aria-label="show 11 new notifications" color="inherit">
-                    <Badge badgeContent={11} color="secondary">
-                        <NotificationsIcon />
-                    </Badge>
-                </IconButton>
-                <p>Notifications</p>
-            </MenuItem>
-            <MenuItem onClick={handleProfileMenuOpen}>
-                <IconButton
-                    aria-label="account of current user"
-                    aria-controls="primary-search-account-menu"
-                    aria-haspopup="true"
-                    color="inherit"
-                >
-                    <AccountCircle />
-                </IconButton>
-                <p>Регистрация</p>
+                <Link to="/cart">
+                    <IconButton aria-label="show 4 new mails" color="inherit">
+                        <Badge badgeContent={productsCountInCart} color="secondary">
+                            <ShoppingBasket />
+                        </Badge>
+                    </IconButton>
+                </Link>
             </MenuItem>
         </Menu>
     );
@@ -195,15 +172,7 @@ export default function PrimarySearchAppBar() {
     return (
         <div className={classes.grow}>
             <AppBar position="static">
-                <Toolbar>
-                    {/* <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="open drawer"
-                    >
-                        <MenuIcon />
-                    </IconButton> */}
+                <Toolbar className={classes.navBar}>
                     <Typography className={classes.title} variant="h6" noWrap>
                         <Link to="/">BootShop</Link>
                     </Typography>
@@ -222,15 +191,6 @@ export default function PrimarySearchAppBar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <Typography className={classes.for} variant="h6" noWrap>
-                        <Link to="/admin" className={classes.for} className="for__link col1">для мужчин</Link>
-                    </Typography>
-                    <Typography className={classes.forwoman} variant="h6" noWrap>
-                        <Link to="/"  className="for__link col2">для женщин</Link>
-                    </Typography>
-                    <Typography className={classes.for} variant="h6" noWrap>
-                        <Link to="/" className="for__link col3">для детей</Link>
-                    </Typography>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
                         <Link to="/cart">
@@ -240,21 +200,6 @@ export default function PrimarySearchAppBar() {
                                 </Badge>
                             </IconButton>
                         </Link>
-                        <IconButton aria-label="show 17 new notifications" color="inherit">
-                            <Badge badgeContent={17} color="secondary">
-                                <NotificationsIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton>
                     </div>
                     <div className={classes.sectionMobile}>
                         <IconButton
